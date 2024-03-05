@@ -1,0 +1,106 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Use custom format
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$git_metrics\
+$fill\
+$docker_context\
+$nodejs\
+$python\
+$cmd_duration $time $jobs\
+$line_break\
+$character"""
+
+[docker_context]
+format = "[🐳 $context ](blue bold)"
+only_with_files = true
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[python]
+symbol = '🐍 '
+format = ' [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = false
+python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
+ 
+
+[fill]
+symbol = " "
+
+[directory]
+style = "blue"
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[character]
+success_symbol = "[❯](green)"
+error_symbol = "[❯](red)"
+# vicmd_symbol = "[❮](purple)"
+
+[jobs]
+symbol = "⚙️"
+style = "bold red"
+number_threshold = 4
+symbol_threshold = 1
+format = "[$symbol]($style)"
+
+[git_branch]
+symbol = "on  "
+format = "[$symbol$branch]($style) "
+style = "bold purple"
+
+
+[git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[git_metrics]
+disabled = false
+added_style = 'bold blue'
+format = '[+$added]($added_style)/[-$deleted]($deleted_style) '
+
+[cmd_duration]
+format = "[\\[$duration\\]]($style)"
+style = "yellow"
+
+[memory_usage]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[time]
+disabled = false
+style = "bold yellow"
+format = "[\\[$time\\] ]($style)"
+
+[custom.stunnel]
+when = "ps aux | grep stunnel | grep -v grep"
+command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
+style = "red"
+format = "[TUNNEL OPEN for $output]($style)"
+
+
+# fish nvm possible fix
+command_timeout = 1000
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+# disabled = true
