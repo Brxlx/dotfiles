@@ -21,6 +21,14 @@ $cmd_duration $time $jobs\
 $line_break\
 $character"""
 
+# [os]
+# disabled = false
+# format = "on [($name )]($style)"
+# style = "bold blue"
+
+[username]
+show_always = true
+
 [docker_context]
 format = "[🐳 $context ](blue bold)"
 only_with_files = true
