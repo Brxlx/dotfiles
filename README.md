@@ -4,9 +4,23 @@
 
 ---
 ### What i use
+
+---
+
+#### Fisher Plugins:
+
+- jorgebucaran/fisher
+- edc/bass
+- jorgebucaran/nvm.fish
+
+---
+
+#### Terminal:
 🖥️ - Warp terminal
 
-🧑🏻‍💻 - VsCode.
+ℹ️ - SF Mono Nerd Font
+
+🧛🏻‍♂️ - Dracula Theme
 
 ---
 ### How it looks
