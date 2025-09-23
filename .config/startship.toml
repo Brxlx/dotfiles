@@ -5,7 +5,7 @@
 add_newline = false
 
 # Use custom format
-format = """
+format = """\
 $username\
 $hostname\
 $directory\
@@ -14,17 +14,25 @@ $git_state\
 $git_status\
 $git_metrics\
 $fill\
+$package\
 $docker_context\
+$bun\
 $nodejs\
 $python\
+$java\
 $cmd_duration $time $jobs\
 $line_break\
-$character"""
+$character\
+"""
 
-# [os]
-# disabled = false
-# format = "on [($name )]($style)"
-# style = "bold blue"
+
+[line_break]
+disabled = false
+
+[os]
+disabled = false
+format = "on [($name )]($style)"
+style = "bold blue"
 
 [username]
 show_always = true
@@ -36,16 +44,27 @@ detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
 
 [nodejs]
 format = "[$symbol($version )]($style)"
+detect_files = [ "package.json", ".node-version", ".nvmrc", "!bunfig.toml", "!bun.lock", "!bun.lockb" ]
+
+[bun]
+format = 'via [🥟 $version](bold green) '
+detect_files = [ "bun.lock", "bun.lockb", "bunfig.toml" ]
+
 
 [python]
 symbol = '🐍 '
 format = ' [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = false
 python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
+
+[java]
+symbol = " "
+format = "via [$symbol($version )]($style)"
  
 
 [fill]
 symbol = " "
+disabled = false
 
 [directory]
 style = "blue"
@@ -56,7 +75,13 @@ truncate_to_repo = false
 [character]
 success_symbol = "[❯](green)"
 error_symbol = "[❯](red)"
-# vicmd_symbol = "[❮](purple)"
+vimcmd_symbol = "[❮](bold green)"
+
+[package]
+symbol = "📦 "
+format="[$symbol($version )]($style)"
+display_private = true
+# disabled = true
 
 [jobs]
 symbol = "⚙️"
@@ -77,6 +102,7 @@ style = "cyan"
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
+cherry_pick = '[🍒 PICKING](bold red)'
 style = "bright-black"
 
 [git_metrics]
@@ -94,6 +120,7 @@ symbol = " "
 [rust]
 symbol = " "
 
+
 [time]
 disabled = false
 style = "bold yellow"
@@ -104,11 +131,3 @@ when = "ps aux | grep stunnel | grep -v grep"
 command = "ps -o etime= -p $(ps aux | grep stunnel | grep -v grep | awk '{print $2}')"
 style = "red"
 format = "[TUNNEL OPEN for $output]($style)"
-
-
-# fish nvm possible fix
-command_timeout = 1000
-
-# Disable the package module, hiding it from the prompt completely
-[package]
-# disabled = true
