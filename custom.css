@@ -1,0 +1,63 @@
+/* ============================================== */
+/* 1. ESTILOS DO EXPLORER (SIDEBAR)      */
+/* ============================================== */
+
+.part.sidebar .monaco-list-row .label-name {
+    font-family: 'Droid Sans Mono', monospace !important;
+    font-size: 13px !important; 
+}
+
+/*
+  Modifica a fonte do campo de entrada de texto (Input) que aparece no Explorer 
+  apenas ao criar um NOVO ARQUIVO ou PASTA.
+*/
+.part.sidebar .monaco-list-row .monaco-inputbox .input {
+    font-family: 'Droid Sans Mono', monospace !important; /* Aplica a fonte desejada */
+    font-size: 13px !important;                          /* Use o mesmo tamanho do Explorer */
+}
+
+/* ============================================== */
+/* 2. ESTILOS DA PALETA DE COMANDOS (POPUP)   */
+/* ============================================== */
+
+.quick-input-widget .monaco-list-row {
+    font-family: 'Verdana', sans-serif !important;
+    font-size: 13px !important; 
+    line-height: 22px;
+}
+
+
+/* Estilo do campo de texto da Paleta de Comandos */
+.quick-input-widget .input {
+    font-family: 'Verdana', sans-serif !important;
+    font-size: 13px !important;
+}
+
+/*
+  Modifica a fonte e o tamanho do texto dentro de todos os Tooltips (dicas de ferramenta/hovers)
+  no VS Code, como o que aparece com o caminho completo do arquivo.
+*/
+.monaco-hover,
+.monaco-hover .markdown-rendered {
+    font-family: 'Droid Sans Mono', sans-serif !important;
+    font-size: 15px !important; /* Ajuste o tamanho da fonte aqui */
+}
+
+/* Estilo para o texto do placeholder (texto cinza "picpay-senior-challenge") */
+.monaco-toolbar,
+#workbench\.parts\.titlebar > div > div.titlebar-center > div > div > div > div > ul > li.action-item.command-center-center > div {
+    font-family: 'Droid Sans', sans-serif !important;
+    font-size: 13px !important; 
+    /* Você pode modificar a cor também */
+    /* color: #999999 !important; */
+}
+
+/*
+  Modifica a fonte e o tamanho do texto (nome do arquivo) em todas as tabs abertas
+  no Editor Group Header (cabeçalho da aba).
+*/
+.editor-group-container .tabs-container .tab .label-name {
+    font-family: 'Droid Sans', sans-serif !important;
+    font-weight: 600;
+    font-size: 13px !important; /* Ajuste o tamanho da fonte aqui */
+}
