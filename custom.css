@@ -4,7 +4,7 @@
 
 .part.sidebar .monaco-list-row .label-name {
     font-family: 'Droid Sans Mono', monospace !important;
-    font-size: 13px !important; 
+    font-size: 13px !important;
 }
 
 /*
@@ -12,8 +12,10 @@
   apenas ao criar um NOVO ARQUIVO ou PASTA.
 */
 .part.sidebar .monaco-list-row .monaco-inputbox .input {
-    font-family: 'Droid Sans Mono', monospace !important; /* Aplica a fonte desejada */
-    font-size: 13px !important;                          /* Use o mesmo tamanho do Explorer */
+    font-family: 'Droid Sans Mono', monospace !important;
+    /* Aplica a fonte desejada */
+    font-size: 13px !important;
+    /* Use o mesmo tamanho do Explorer */
 }
 
 /* ============================================== */
@@ -22,7 +24,7 @@
 
 .quick-input-widget .monaco-list-row {
     font-family: 'Verdana', sans-serif !important;
-    font-size: 13px !important; 
+    font-size: 13px !important;
     line-height: 22px;
 }
 
@@ -40,14 +42,15 @@
 .monaco-hover,
 .monaco-hover .markdown-rendered {
     font-family: 'Droid Sans Mono', sans-serif !important;
-    font-size: 15px !important; /* Ajuste o tamanho da fonte aqui */
+    font-size: 15px !important;
+    /* Ajuste o tamanho da fonte aqui */
 }
 
 /* Estilo para o texto do placeholder (texto cinza "picpay-senior-challenge") */
 .monaco-toolbar,
-#workbench\.parts\.titlebar > div > div.titlebar-center > div > div > div > div > ul > li.action-item.command-center-center > div {
+#workbench\.parts\.titlebar>div>div.titlebar-center>div>div>div>div>ul>li.action-item.command-center-center>div {
     font-family: 'Droid Sans', sans-serif !important;
-    font-size: 13px !important; 
+    font-size: 13px !important;
     /* Você pode modificar a cor também */
     /* color: #999999 !important; */
 }
@@ -57,7 +60,33 @@
   no Editor Group Header (cabeçalho da aba).
 */
 .editor-group-container .tabs-container .tab .label-name {
-    font-family: 'Droid Sans', sans-serif !important;
+    font-family: 'Droid Sans Mono', sans-serif !important;
     font-weight: 600;
-    font-size: 13px !important; /* Ajuste o tamanho da fonte aqui */
+    font-size: 13px !important;
+    /* Ajuste o tamanho da fonte aqui */
+}
+
+/* ============================================== */
+/* 3. ESTILOS DO HOVER PADRÃO / DEBUG HOVER       */
+/* (Usando o seletor-chave: .debug-hover-widget)  */
+/* ============================================== */
+
+/* 1. ESTILO DAS CHAVES/PROPRIEDADES (ex: "value", "[[Prototype]]") */
+.debug-hover-widget .monaco-list-row .label-name .key,
+.debug-hover-widget .monaco-list-row .label-name {
+    font-family: 'Droid Sans Mono', monospace !important; 
+    font-size: 13px !important;
+    font-weight: 600 !important; /* Exemplo: Um pouco mais grosso */
+}
+
+/* 2. ESTILO DOS VALORES (ex: "'category-1'", "Object") */
+.debug-hover-widget .value {
+    font-family: 'Drois Sans Mono', monospace !important; /* Diferente da chave */
+    font-size: 13px !important; /* Exemplo: Um pouco maior */
+}
+
+/* 3. Estilo Geral de Fallback/Restante (se necessário) */
+.debug-hover-widget .markdown-rendered {
+    font-family: 'Droid Sans Mono', monospace !important;
+    font-size: 13px !important; 
 }
