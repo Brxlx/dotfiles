@@ -11,7 +11,6 @@
 
 - jorgebucaran/fisher
 - edc/bass
-- jorgebucaran/nvm.fish
 
 ---
 
